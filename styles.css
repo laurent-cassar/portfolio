@@ -1,0 +1,392 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Overall Layout */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    line-height: 1.6;
+    padding-top: 120px; /* Augmenté pour compenser la hauteur du menu */
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column; /* Empiler les éléments verticalement */
+    justify-content: flex-start; /* Centrer les éléments verticalement */
+    align-items: center; /* Centrer les éléments horizontalement */
+}
+
+/* Conteneur des noms */
+.nom {
+    width: 100%;
+    display: flex; /* Met les éléments sur une même ligne */
+    justify-content: space-between; /* Espace entre le nom et la description */
+    align-items: flex-end; /* Centrer verticalement */
+    padding: 0 15px; /* Espacement intérieur */
+}
+
+.header-left {
+    text-align: left; /* Aligner "Laurent Cassar" à gauche */
+    font-size: 50px;
+}
+
+.header-right {
+    text-align: center; /* Aligner "Technicien Réseau" à droite */
+    font-size: 13px;
+}
+
+/* Menu de navigation */
+.navbar nav {
+    text-align: center;
+    display: block;
+    width: 100%; /* Assurer que le nav prend toute la largeur disponible */
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;  /* Centrer les liens horizontalement */
+    align-items: center;
+}
+
+.navbar nav ul li {
+    margin: 0 15px;
+    position: relative;
+}
+
+.navbar nav ul li a {
+    color: #fff;
+    font-size: 15px;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Effet sur les liens */
+.navbar nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: #ff6700;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.navbar nav ul li a:hover {
+    color: #ff6700;
+    transform: scale(1.1);
+}
+
+.navbar nav ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Section Content */
+section {
+    padding: 170px 20px; /* Ajusté pour éviter que le contenu soit masqué */
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Titles */
+h2 {
+    text-align: center;
+    font-size: 30px;
+    font-style: italic;
+    color: #fff;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease-out;
+}
+
+h3 {
+    font-size: 28px;
+    font-style: italic;
+    color: #ff6700;
+    margin-bottom: 10px;
+    animation: fadeIn 1.5s ease-out;
+}
+
+h4 {
+    font-size: 30px;
+    color: #00ff95;
+    margin-bottom: 10px;
+    animation: fadeIn 1.5s ease-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Contact Links */
+a {
+    color: #ff6700;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Section Content Styles */
+#about, #skills, #parcours, #experience, #interet, #projets, #contact {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 32px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-out;
+}
+
+/* Custom Backgrounds for Each Page */
+body.about {
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Blue Gradient for About */
+}
+
+body.skills {
+    background: linear-gradient(135deg, #ff6700, #ff5e3a); /* Orange Gradient for Skills */
+}
+
+body.parcours {
+    background: linear-gradient(135deg, #008080, #00bfae); /* Teal Gradient for Training */
+}
+
+body.experience {
+    background: linear-gradient(135deg, #800080, #9b59b6); /* Purple Gradient for Experience */
+}
+
+body.interet {
+    background: linear-gradient(135deg, #f39c12, #e67e22); /* Yellow Gradient for Interests */
+}
+
+body.projets {
+    background: linear-gradient(135deg, #1abc9c, #16a085); /* Teal Gradient for Projects */
+}
+
+body.contact {
+    background: linear-gradient(135deg, #34495e, #2c3e50); /* Dark Blue Gradient for Contact */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .navbar nav ul {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    .navbar nav ul li {
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+    h4 {
+        font-size: 30px;
+    }
+}
+
+/* Style pour le titre H1 */
+.navbar h1 {
+    font-size: 30px; /* Augmenter la taille de la police */
+    font-weight: bold; /* Mettre le titre en gras */
+    color: rgb(100, 49, 201); /* Changer la couleur du titre */
+    letter-spacing: 3px;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2); /* Ajouter une ombre pour un effet 3D */
+    transition: all 0.3s ease;
+}
+
+/* Effet de survol sur le titre h1 */
+.navbar h1:hover {
+    color: red; /* Changer la couleur au survol */
+    text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.5); /* Accentuer l'ombre au survol */
+}
+
+/* Menu de navigation - Liens */
+.navbar nav ul li a {
+    font-size: 19.9px; /* Augmenter la taille de la police */
+    font-family: Arial, sans-serif;
+    color: red;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+/* Effet de survol sur les liens */
+.navbar nav ul li a:hover {
+    color: #ff6700; /* Changer la couleur au survol */
+}
+
+/* Ajouter du padding au bas du body */
+body {
+    padding-bottom: 45px; /* Ajustez la valeur selon vos besoins */
+}
+
+/* Exemple générique pour une page avec fond d'écran transparent */
+body.about {
+    background: rgba(0, 0, 0, 0.5) url('fond_d_ecran_informatique_ordinateurs_wallpaper_015.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Exemple pour la page Compétences */
+body.skills {
+    background: rgba(0, 0, 0, 0.3) url('computer-lights-glow-blur-wallpaper-preview.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Exemple pour la page Parcours */
+body.parcours {
+    background: rgba(0, 0, 0, 0.4) url('Code-informatique.avif') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Exemple pour la page Expériences professionnelles */
+body.experience {
+    background: rgba(0, 0, 0, 0.6) url('banner1.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Exemple pour la page Langues et Centres d'intérêt */
+body.interet {
+    background: rgba(0, 0, 0, 0.2) url('stargate_wallpaper_space_by_macsforever-d3gejks.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Exemple pour la page Projets */
+body.projets {
+    background: rgba(0, 0, 0, 0.5) url('Asus Rog Wallpapers 1.webp') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Exemple pour la page Contacts */
+body.contact {
+    background: rgba(0, 0, 0, 0.4) url('stargate-fantasy-art-pyramids-1920x1080-107835.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: space-between; /* Espace entre les éléments */
+    align-items: center;
+    color: #fff;
+    font-size: 14px;
+    padding: 0px 10px; /* Ajouter une petite marge interne à gauche et à droite, réduction de l'espace en bas */
+    box-sizing: border-box; /* Assure que le padding ne fait pas dépasser le footer */
+}
+
+.footer-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Met les deux sections de part et d'autre */
+    align-items: center;
+}
+
+.footer-left {
+    text-align: left; /* Justifier à gauche */
+}
+
+.footer-center {
+    text-align: left; /* Justifier à gauche */
+}
+
+.footer-right {
+    text-align: left; /* Alignement à gauche */
+}
+
+
+footer a {
+    color: #ff6700;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Icônes spécifiques */
+.email-icon {
+    color: #FF6347; /* Tomate */
+    transition: color 0.3s ease;
+}
+
+.email-icon:hover {
+    color: #fff; /* Couleur blanche au survol */
+}
+
+.github-icon {
+    color: #333; /* Gris foncé */
+    transition: color 0.3s ease;
+}
+
+.github-icon:hover {
+    color: #fff; /* Couleur blanche au survol */
+}
+
+.linkedin-icon {
+    color: #0077B5; /* Bleu LinkedIn */
+    transition: color 0.3s ease;
+}
+
+.linkedin-icon:hover {
+    color: #fff; /* Couleur blanche au survol */
+}
+
+.cv-icon {
+    color: #4CAF50; /* Vert */
+    transition: color 0.3s ease;
+}
+
+.cv-icon:hover {
+    color: #fff; /* Couleur blanche au survol */
+}
+
+/* Couleur des liens dans la section de contact */
+#contact a {
+    color: #FF6700; /* Orange par défaut */
+    transition: color 0.3s ease;
+}
+
+#contact a:hover {
+    color: #fff; /* Couleur blanche au survol */
+}
